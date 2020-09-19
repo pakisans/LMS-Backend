@@ -1,8 +1,9 @@
 package lmsbackendapp.backend.repository;
 
+import lmsbackendapp.backend.model.Phone;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface Dissertation extends JpaRepository<Dissertation,Long> {
+public interface PhoneRepository extends JpaRepository<Phone,Long> {
 }
