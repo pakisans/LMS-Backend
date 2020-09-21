@@ -9,5 +9,6 @@ import java.util.Optional;
 
 @Repository
 public interface PersonalDataRepository extends JpaRepository<PersonalData,Long> {
-
+    @Query("SELECT p FROM PersonalData p WHERE p.pathProfilePic LIKE ?1")
+    Optional<PersonalData> getByUsername(String username);
 }

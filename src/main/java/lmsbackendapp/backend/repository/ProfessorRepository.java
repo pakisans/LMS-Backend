@@ -18,6 +18,9 @@ public interface ProfessorRepository extends JpaRepository<Professor,Long> {
     @Query("SELECT p FROM Professor p WHERE p.regUser.username = ?1")
     Optional<Professor> getByUsername(String username);
 
+    @Query("SELECT DISTINCT pr.professor FROM ProfessorOnRealization pr WHERE pr.subjectRealization.studyYear.studyProgram.faculty.id = ?1")
+    Iterable<Optional<Professor>> getAllByFaculty(Long facultyId);
+
 
 
 }
