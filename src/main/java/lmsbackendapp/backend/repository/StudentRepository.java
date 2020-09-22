@@ -13,4 +13,6 @@ public interface StudentRepository extends JpaRepository<Student,Long> {
     Optional<Student> getByUsername(String username);
     @Query("SELECT s FROM Student s WHERE s.personalData.upin = ?1")
     Optional<Student> findStudentByUpin(String upin);
+    @Query("SELECT s FROM Student s WHERE s.personalData.name LIKE ?1")
+    Iterable<Optional<Student>> findStudentByName(String name);
 }
