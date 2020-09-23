@@ -18,12 +18,12 @@ public class RegUserController {
     @Autowired
     RegUserService regUserSrvc;
 
-    @JsonView(ViewUtils.HideOptionalProp.class)
+    @JsonView(ViewUtils.HideOptionalProperties.class)
     @RequestMapping()
     public ResponseEntity<Iterable<RegUser>> getRegUser(){
         return new ResponseEntity<Iterable<RegUser>>(regUserSrvc.getRegUser(), HttpStatus.OK);
     }
-    @JsonView(ViewUtils.HideOptionalProp.class)
+    @JsonView(ViewUtils.HideOptionalProperties.class)
     @RequestMapping(value="/{id}", method= RequestMethod.GET)
     public ResponseEntity<RegUser> getRegUserById(@PathVariable Long id) {
         Optional<RegUser> regUser = regUserSrvc.getRegUserById(id);

@@ -1,5 +1,5 @@
 package lmsbackendapp.backend.utils;
 
 public class ViewUtils {
-    public interface HideOptionalProp{};
+    public interface HideOptionalProperties{};
 }
