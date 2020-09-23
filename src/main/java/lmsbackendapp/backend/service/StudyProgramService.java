@@ -42,6 +42,6 @@ public class StudyProgramService {
         studyPRepo.save(sp);
     }
     public ArrayList<StudyYear> getStudyYear(Long studyProgramId){
-        return studyYRepo.findByStudyProgramEq(studyProgramId);
+        return studyYRepo.findByStudyProgramEquals(studyProgramId);
     }
 }

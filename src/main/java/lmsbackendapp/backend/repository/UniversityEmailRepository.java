@@ -10,5 +10,5 @@ import java.util.ArrayList;
 public interface UniversityEmailRepository extends JpaRepository<UniversityEmail,Long> {
 
 
-    ArrayList<UniversityEmail> findByUniversityIdEq(Long id);
+    ArrayList<UniversityEmail> findByUniversityIdEquals(Long id);
 }

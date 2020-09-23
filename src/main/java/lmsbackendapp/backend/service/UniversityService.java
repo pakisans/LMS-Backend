@@ -42,7 +42,7 @@ public class UniversityService {
     }
 
     public ArrayList<Phone> getUniversityPhones(Long universityId){
-        ArrayList<UniversityPhoneNumbers> phonesId = univerPhoneRepo.findByUniversityIdEq(universityId);
+        ArrayList<UniversityPhoneNumbers> phonesId = univerPhoneRepo.findByUniversityIdEquals(universityId);
         ArrayList<Phone> phones = new ArrayList<Phone>();
         for(UniversityPhoneNumbers p : phonesId) {
             phones.add(p.getPhone());
@@ -50,7 +50,7 @@ public class UniversityService {
         return phones;
     }
     public ArrayList<Email> getUniversityEmail(Long universityId) {
-        ArrayList<UniversityEmail> emailsId = univerEmailRepo.findByUniversityIdEq(universityId);
+        ArrayList<UniversityEmail> emailsId = univerEmailRepo.findByUniversityIdEquals(universityId);
         ArrayList<Email> emails = new ArrayList<Email>();
         for(UniversityEmail e : emailsId) {
             emails.add(e.getEmail());

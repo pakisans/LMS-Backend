@@ -49,14 +49,14 @@ public class FacultyService {
         return studyPRepo.findByFacultyEquals(facultyId);
     }
     public ArrayList<Phone> getFacultyPhone(Long facultyId){
-        ArrayList<FacultyPhoneNumbers> phonesId = facultyPhoneNumbersRepo.findByFacultyIdEq(facultyId);
+        ArrayList<FacultyPhoneNumbers> phonesId = facultyPhoneNumbersRepo.findByFacultyIdEquals(facultyId);
         ArrayList<Phone> phones = new ArrayList<Phone>();
         for (FacultyPhoneNumbers p : phonesId){
             phones.add(p.getPhone());
         }return phones;
     }
     public ArrayList<Email> getFacultyEmail(Long facultyId){
-        ArrayList<FacultyEmail> facEmail = facultyEmailRepo.findByFacultyIdEq(facultyId);
+        ArrayList<FacultyEmail> facEmail = facultyEmailRepo.findByFacultyIdEquals(facultyId);
         ArrayList<Email> emails = new ArrayList<Email>();
         for (FacultyEmail ep : facEmail){
             emails.add(ep.getEmail());

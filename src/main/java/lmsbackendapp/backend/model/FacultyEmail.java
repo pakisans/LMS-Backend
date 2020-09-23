@@ -1,7 +1,7 @@
 package lmsbackendapp.backend.model;
 
 import javax.persistence.*;
-
+@Entity
 public class FacultyEmail {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)

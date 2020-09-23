@@ -10,5 +10,5 @@ import java.util.Optional;
 @Repository
 public interface ResultRepository extends JpaRepository<Result,Long> {
     Iterable<Optional<Result>> findBySubjectId(Long id);
-    ArrayList<Result> findBySubjectIdEq(long subjectId);
+    ArrayList<Result> findBySubjectIdEquals(long subjectId);
 }

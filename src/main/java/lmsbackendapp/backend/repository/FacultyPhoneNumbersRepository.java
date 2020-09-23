@@ -8,5 +8,5 @@ import java.util.ArrayList;
 
 @Repository
 public interface FacultyPhoneNumbersRepository extends JpaRepository<FacultyPhoneNumbers,Long> {
-    ArrayList<FacultyPhoneNumbers> findByFacultyIdEq(Long id);
+    ArrayList<FacultyPhoneNumbers> findByFacultyIdEquals(Long id);
 }

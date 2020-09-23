@@ -44,11 +44,11 @@ public class SubjectService {
     }
 
     public Iterable<Optional<Subject>> getSubjectByName(String name){
-        return subjectRepo.findByNameS("%"+name+"%");
+        return subjectRepo.findByNameLike("%"+name+"%");
     }
 
     public ArrayList<Result> getSylabus(Long subjectId) {
-        return resultRepo.findBySubjectIdEq(subjectId);
+        return resultRepo.findBySubjectIdEquals(subjectId);
     }
 
 }

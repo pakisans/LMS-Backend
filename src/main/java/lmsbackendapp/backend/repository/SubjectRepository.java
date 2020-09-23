@@ -11,5 +11,5 @@ import java.util.Optional;
 public interface SubjectRepository extends JpaRepository<Subject,Long> {
     ArrayList<Subject> findByStudyYearIdEquals(Long studyYearId);
 
-    Iterable<Optional<Subject>> findByNameS(String name);
+    Iterable<Optional<Subject>> findByNameLike(String name);
 }

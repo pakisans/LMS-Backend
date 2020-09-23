@@ -17,7 +17,6 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-@Component
 public class AuthenticationTokenFilter extends UsernamePasswordAuthenticationFilter {
     @Autowired
     private TokenUtils tokenUtils;
