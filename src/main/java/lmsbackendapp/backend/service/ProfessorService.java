@@ -54,6 +54,12 @@ public class ProfessorService {
 
         }
     }
+    public void deleteProfessor(Long id){
+        Optional<Professor> professorDel = professorRepo.findById(id);
+        Professor p = professorDel.get();
+        p.setDeleted(true);
+        professorRepo.save(p);
+    }
     public Iterable<Optional<Professor>> getProfessorByName(String name){
         return professorRepo.findProfessorByName("%"+name+"%");
     }

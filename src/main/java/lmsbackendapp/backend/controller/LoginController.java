@@ -14,7 +14,7 @@ import java.util.HashMap;
 
 @CrossOrigin(origins = {"http://localhost:4200"})
 @Controller
-@RequestMapping("login")
+@RequestMapping("/login")
 public class LoginController {
     @Autowired
     LoginService loginSrvc;

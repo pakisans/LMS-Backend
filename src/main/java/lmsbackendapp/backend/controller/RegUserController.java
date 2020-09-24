@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 @CrossOrigin(origins={"http://localhost:4200"})
@@ -21,7 +22,8 @@ public class RegUserController {
     @JsonView(ViewUtils.HideOptionalProperties.class)
     @RequestMapping()
     public ResponseEntity<Iterable<RegUser>> getRegUser(){
-        return new ResponseEntity<Iterable<RegUser>>(regUserSrvc.getRegUser(), HttpStatus.OK);
+        Iterable<RegUser> users = regUserSrvc.getRegUser();
+        return new ResponseEntity<Iterable<RegUser>>(users, HttpStatus.OK);
     }
     @JsonView(ViewUtils.HideOptionalProperties.class)
     @RequestMapping(value="/{id}", method= RequestMethod.GET)

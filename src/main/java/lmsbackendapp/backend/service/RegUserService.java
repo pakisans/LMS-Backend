@@ -11,6 +11,9 @@ import java.util.Optional;
 public class RegUserService {
     @Autowired
     private RegUserRepository regUserRepo;
+    public RegUserService(){
+
+    }
 
     public Iterable<RegUser> getRegUser(){
         return regUserRepo.findAll();

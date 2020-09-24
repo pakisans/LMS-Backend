@@ -32,7 +32,7 @@ public class Subject {
     @Column(nullable = false)
     private Integer otherFromsOfTeaching;
 
-    @Column(nullable = false)
+    @Column
     private Integer research;
 
     @Column(nullable = false)
@@ -45,9 +45,9 @@ public class Subject {
     @ManyToMany
     private Set<Subject> precondition;
 
-//    @JsonView()
-    @ManyToMany(mappedBy="precondition")
-    private Set<Subject> preconditionFor;
+////    @JsonView()
+//    @ManyToMany(mappedBy="precondition")
+//    private Set<Subject> preconditionFor;
 
 //    @JsonView()
     @ManyToOne(cascade= CascadeType.ALL)
@@ -72,7 +72,7 @@ public class Subject {
         this.otherSubjects = otherSubjects;
         this.syllabus = syllabuss;
         this.precondition = precondition;
-        this.preconditionFor = preconditionFor;
+//        this.preconditionFor = preconditionFor;
         this.studyYear = studyYear;
         this.deleted = deleted;
     }
@@ -165,13 +165,13 @@ public class Subject {
         this.precondition = precondition;
     }
 
-    public Set<Subject> getPreconditionFor() {
-        return preconditionFor;
-    }
-
-    public void setPreconditionFor(Set<Subject> preconditionFor) {
-        this.preconditionFor = preconditionFor;
-    }
+//    public Set<Subject> getPreconditionFor() {
+//        return preconditionFor;
+//    }
+//
+//    public void setPreconditionFor(Set<Subject> preconditionFor) {
+//        this.preconditionFor = preconditionFor;
+//    }
 
     public StudyYear getStudyYear() {
         return studyYear;

@@ -10,6 +10,7 @@ import javax.persistence.OneToMany;
 
 import java.util.Set;
 import com.fasterxml.jackson.annotation.JsonView;
+import lmsbackendapp.backend.utils.ViewUtils;
 
 @Entity
 public class PersonalData {
@@ -32,11 +33,11 @@ public class PersonalData {
     @Column(length=150)
     private String pathProfilePic;
 
-//    @JsonView()
+    @JsonView(ViewUtils.ShowProfessor.class)
     @OneToMany(mappedBy="personalData")
     private Set<Professor> professor;
 
-//    @JsonView()
+    @JsonView(ViewUtils.ShowProfessorOnRealization.class)
     @OneToMany(mappedBy="personalData")
     private Set<ProfessorOnRealization> professorOnRealization;
 

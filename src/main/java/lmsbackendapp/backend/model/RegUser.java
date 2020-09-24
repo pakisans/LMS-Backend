@@ -1,6 +1,7 @@
 package lmsbackendapp.backend.model;
 
 import com.fasterxml.jackson.annotation.JsonView;
+import lmsbackendapp.backend.utils.ViewUtils;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -20,11 +21,11 @@ public class RegUser {
     @Column(length=64, nullable = false)
     private String email;
 
-//    @JsonView()
+    @JsonView(ViewUtils.ShowUserPermssion.class)
     @OneToMany(mappedBy = "regUser", cascade = CascadeType.ALL)
     private Set<UserPermission> userPermission;
 
-//    @JsonView()
+    @JsonView(ViewUtils.ShowAdminStaff.class)
     @OneToMany(mappedBy="regUser")
     private Set<AdminStaff> adminStaff;
 
